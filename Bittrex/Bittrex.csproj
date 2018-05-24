@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BittrexApi.cs" />
     <Compile Include="Models\CoinCurrency.cs" />
     <Compile Include="Models\IResponse.cs" />
     <Compile Include="Models\Market.cs" />
@@ -51,8 +52,6 @@
     <Compile Include="Models\Ticker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataCore\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

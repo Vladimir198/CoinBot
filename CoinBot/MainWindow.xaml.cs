@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Bittrex.Models;
+using Bittrex;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 
@@ -37,15 +38,8 @@ namespace CoinBot
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string site = "https://bittrex.com/api/v1.1/public/getmarkets";
-            HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(site);
-            HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
-            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(MarketResponse));
-            using (Stream stream = resp.GetResponseStream())
-            {
-                response = (MarketResponse)jsonFormatter.ReadObject(stream);
-            }
-            coinsgrd.ItemsSource = response.result;
-
+            coinsgrd.ItemsSource = ((MarketResponse)BittrexApi.GetPublic(site)).result;
+            
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bittrex.Models
 {
-    interface IResponse
+    public interface IResponse
     {
         bool success { get; set; }
 	    string message { get; set; }
