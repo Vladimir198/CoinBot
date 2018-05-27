@@ -38,8 +38,7 @@ namespace CoinBot
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string site = "https://bittrex.com/api/v1.1/public/getmarkets";
-            coinsgrd.ItemsSource = ((MarketResponse)BittrexApi.GetPublic(site)).result;
-            
+            coinsgrd.ItemsSource = ((MarketResponse)BittrexApi.GetData(site, typeof(MarketResponse))).result;
         }
     }
 }

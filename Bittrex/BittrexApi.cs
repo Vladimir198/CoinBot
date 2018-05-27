@@ -12,12 +12,12 @@ namespace Bittrex
 {
     public static class BittrexApi
     {
-        public  static IResponse  GetPublic(string path)
+        public  static IResponse  GetData(string path, Type type)
         {
             IResponse response;
             HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(path);
             HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
-            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(MarketResponse));
+            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(type);
             using (Stream stream = resp.GetResponseStream())
             {
                 response = (MarketResponse)jsonFormatter.ReadObject(stream);
