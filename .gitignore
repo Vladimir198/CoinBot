@@ -3,3 +3,7 @@
 ################################################################################
 
 /CoinBot/bin/Debug
+/.vs/CoinBot/v15
+/CoinBot/obj/Debug
+/Bittrex/bin/Debug
+/Bittrex/obj/Debug

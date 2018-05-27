@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bittrex.Models
 {
-    class MarketSummary
+    public class MarketSummary
     {
         public string MarketName { get; set; }
         public double Higth { get; set; }

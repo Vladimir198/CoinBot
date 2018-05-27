@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinBot", "CoinBot\CoinBot.csproj", "{0CB8EF64-E791-4D68-850B-2719C7AF31FA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{101C7144-E825-4E50-A6E5-083D6CAA2891} = {101C7144-E825-4E50-A6E5-083D6CAA2891}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bittrex", "Bittrex\Bittrex.csproj", "{101C7144-E825-4E50-A6E5-083D6CAA2891}"
 EndProject
