@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Bittrex.Models
 {
-    public interface IResponse
+    public abstract class Response
     {
-        bool success { get; set; }
-	    string message { get; set; }
+        public bool success { get; set; }
+	    public string message { get; set; }
     }
 }

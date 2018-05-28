@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bittrex.Models
 {
-    class CoinCurrency
+    public class CoinCurrency
     {
         public string Currency {get; set; }
         public string CurrencyLong { get; set; }

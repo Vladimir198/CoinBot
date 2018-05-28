@@ -27,19 +27,55 @@ namespace CoinBot
     public partial class MainWindow : Window
     {
 
-        MarketResponse response;
+        
        
        public MainWindow()
         {
             InitializeComponent();
-            response = new MarketResponse();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string site = "https://bittrex.com/api/v1.1/public/getmarkets";
-            coinsgrd.ItemsSource = ((MarketResponse)BittrexApi.GetPublic(site)).result;
-            
+            coinsgrd.ItemsSource = BittrexApi.GetMarkets().result;
+        }
+
+        private void btnMarketSummary_Click(object sender, RoutedEventArgs e)
+        {
+            coinsgrd.ItemsSource = BittrexApi.GetMarketSummary().result;
+        }
+
+        private void btnCurrenci_Click(object sender, RoutedEventArgs e)
+        {
+            coinsgrd.ItemsSource = BittrexApi.GetCurrencies().result;
+        }
+
+        private void btnTickers_Click(object sender, RoutedEventArgs e)
+        {
+            TikerResponse response = BittrexApi.GetTicker("btc-trx");
+            if (response.success)
+            {
+                List<Tiker> list = new List<Tiker>();
+                list.Add(response.result);
+                coinsgrd.ItemsSource = list;
+            } else
+            {
+                MessageBox.Show(response.message);
+            }
+        }
+
+        private void btnTickerSummary_Click(object sender, RoutedEventArgs e)
+        {
+            TikerSummaryResponse response = BittrexApi.GetTickerSummary("btc-trx");
+            if (response.success)
+            {
+                List<TikerSummary> list = new List<TikerSummary>();
+                list.Add(response.Result);
+                coinsgrd.ItemsSource = list;
+            }
+            else
+            {
+                MessageBox.Show(response.message);
+            }
         }
     }
 }

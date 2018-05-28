@@ -7,10 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="67,44,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <DataGrid x:Name="coinsgrd" AutoGenerateColumns="True" HorizontalAlignment="Stretch" Margin="167,5,5,5" VerticalAlignment="Stretch">
-            
-            
-        </DataGrid>
+        <Button Content="Market" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Height="20" Width="75" Click="Button_Click"/>
+        <Button x:Name="btnMarketSummary" Content="Market summary" HorizontalAlignment="Left" Margin="20,44,0,0" VerticalAlignment="Top" Height="20" Width="75" Click="btnMarketSummary_Click"/>
+        <Button x:Name="btnCurrenci" Content="Currenci" HorizontalAlignment="Left" Margin="20,70,0,0" VerticalAlignment="Top" Height="20" Width="75" Click="btnCurrenci_Click"/>
+        <Button x:Name="btnTickers" Content="Tickers" HorizontalAlignment="Left" Margin="20,100,0,0" VerticalAlignment="Top" Height="20" Width="75" Click="btnTickers_Click"/>
+        <Button x:Name="btnTickerSummary" Content="TickerSummary" HorizontalAlignment="Left" Margin="20,130,0,0" VerticalAlignment="Top" Height="20" Width="75" Click="btnTickerSummary_Click"/>
+        <DataGrid x:Name="coinsgrd" AutoGenerateColumns="True" HorizontalAlignment="Stretch" Margin="167,5,5,5" VerticalAlignment="Stretch"/>
     </Grid>
 </Window>

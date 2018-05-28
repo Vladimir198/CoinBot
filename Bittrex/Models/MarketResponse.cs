@@ -4,14 +4,8 @@ using System.Runtime.Serialization.Json;
 
 namespace Bittrex.Models
 {
-    [DataContract]
-    public class MarketResponse : IResponse
+    public class MarketResponse : Response
     {
-        [DataMember]
-        public bool success { get; set; }
-        [DataMember]
-        public string message { get; set; }
-        [DataMember]
         public List<Market> result { get; set; }
 
         public MarketResponse()

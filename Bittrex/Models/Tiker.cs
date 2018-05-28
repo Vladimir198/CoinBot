@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bittrex.Models
 {
-    class Ticker
+    public class Tiker
     {
         public double Bid { get; set; }
         public double Ask { get; set; }
