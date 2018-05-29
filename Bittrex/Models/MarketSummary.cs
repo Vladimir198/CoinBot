@@ -20,4 +20,23 @@ namespace Bittrex.Models
         public string DateTime { get; set; }
         public string DisplayMarketName { get; set; }
     }
+
+    public class MarketSummaryResponse : Response
+    {
+        public MarketSummaryResponse()
+        {
+            result = new List<MarketSummary>();
+        }
+        public List<MarketSummary> result { get; set; }
+    }
+
+    public class MarketSummariesResponse : Response
+    {
+        public MarketSummariesResponse()
+        {
+            result = new List<MarketSummary>();
+        }
+
+        public List<MarketSummary> result { get; set; }
+    }
 }

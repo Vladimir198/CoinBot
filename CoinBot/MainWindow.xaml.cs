@@ -41,7 +41,7 @@ namespace CoinBot
 
         private void btnMarketSummary_Click(object sender, RoutedEventArgs e)
         {
-            coinsgrd.ItemsSource = BittrexApi.GetMarketSummary().result;
+            coinsgrd.ItemsSource = BittrexApi.GetMarketSummaries().result;
         }
 
         private void btnCurrenci_Click(object sender, RoutedEventArgs e)
@@ -65,12 +65,36 @@ namespace CoinBot
 
         private void btnTickerSummary_Click(object sender, RoutedEventArgs e)
         {
-            TikerSummaryResponse response = BittrexApi.GetTickerSummary("btc-trx");
+            MarketSummaryResponse response = BittrexApi.GetMarketSummary("btc-trx");
             if (response.success)
             {
-                List<TikerSummary> list = new List<TikerSummary>();
-                list.Add(response.Result);
-                coinsgrd.ItemsSource = list;
+                coinsgrd.ItemsSource = response.result;
+            }
+            else
+            {
+                MessageBox.Show(response.message);
+            }
+        }
+
+        private void btnOrderbooks_Click(object sender, RoutedEventArgs e)
+        {
+            OrderbooksResponse response = BittrexApi.GetOrderbooks("btc-trx", OrderType.Both);
+            if (response.success)
+            {
+                coinsgrd.ItemsSource = response.result.buy;
+            }
+            else
+            {
+                MessageBox.Show(response.message);
+            }
+        }
+
+        private void btnHistory_Click(object sender, RoutedEventArgs e)
+        {
+            HistoryResponse response = BittrexApi.GetOrdersHistory("btc-trx");
+            if (response.success)
+            {
+                coinsgrd.ItemsSource = response.result;
             }
             else
             {

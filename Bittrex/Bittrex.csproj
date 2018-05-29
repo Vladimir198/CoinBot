@@ -45,13 +45,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BittrexApi.cs" />
-    <Compile Include="Models\CurrenciesResponse.cs" />
-    <Compile Include="Models\MarketSummaryResponse.cs" />
+    <Compile Include="Core.cs" />
+    <Compile Include="Models\Balanc.cs" />
+    <Compile Include="Models\BuySelResponse.cs" />
+    <Compile Include="Models\CancelResponse.cs" />
+    <Compile Include="Models\EnumTypeOrders.cs" />
     <Compile Include="Models\CoinCurrency.cs" />
+    <Compile Include="Models\OpenOrder.cs" />
     <Compile Include="Models\Response.cs" />
     <Compile Include="Models\Market.cs" />
     <Compile Include="Models\MarketHistory.cs" />
-    <Compile Include="Models\MarketResponse.cs" />
     <Compile Include="Models\MarketSummary.cs" />
     <Compile Include="Models\Orderbook.cs" />
     <Compile Include="Models\Tiker.cs" />
@@ -61,7 +64,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Models\TikerResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd">
