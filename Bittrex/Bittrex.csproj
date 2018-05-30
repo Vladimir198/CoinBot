@@ -29,6 +29,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -42,19 +45,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BittrexApi.cs" />
-    <Compile Include="Models\MarketSumaryResponse.cs" />
+    <Compile Include="Core.cs" />
+    <Compile Include="Models\Balanc.cs" />
+    <Compile Include="Models\BuySelResponse.cs" />
+    <Compile Include="Models\CancelResponse.cs" />
+    <Compile Include="Models\EnumTypeOrders.cs" />
     <Compile Include="Models\CoinCurrency.cs" />
-    <Compile Include="Models\IResponse.cs" />
+    <Compile Include="Models\OpenOrder.cs" />
+    <Compile Include="Models\Response.cs" />
     <Compile Include="Models\Market.cs" />
     <Compile Include="Models\MarketHistory.cs" />
-    <Compile Include="Models\MarketResponse.cs" />
     <Compile Include="Models\MarketSummary.cs" />
     <Compile Include="Models\Orderbook.cs" />
-    <Compile Include="Models\Ticker.cs" />
+    <Compile Include="Models\Tiker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram1.cd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

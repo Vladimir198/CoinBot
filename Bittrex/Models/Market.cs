@@ -27,4 +27,14 @@ namespace Bittrex.Models
         [DataMember]
         public string Created { get; set; }
     }
+
+    public class MarketResponse : Response
+    {
+        public List<Market> result { get; set; }
+
+        public MarketResponse()
+        {
+            result = new List<Market>();
+        }
+    }
 }

@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace Bittrex.Models
 {
-    public interface IResponse
+    public class CancelResponse: Response
     {
-        bool success { get; set; }
-	    string message { get; set; }
+        public CancelResponse()
+        {
+            result = "";
+        }
+        string result;
     }
 }
