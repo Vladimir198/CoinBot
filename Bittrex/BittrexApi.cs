@@ -31,7 +31,7 @@ namespace Bittrex
                 {
                     result = jsonFormatter.ReadObject(stream);
                 }
-                Thread.Sleep(5000);
+                //Thread.Sleep(5000);
                 return result;
             });
             
@@ -53,7 +53,6 @@ namespace Bittrex
             {
                 result = jsonFormatter.ReadObject(stream);
             }
-            Thread.Sleep(5000);
             return result;
         }
 
@@ -142,6 +141,24 @@ namespace Bittrex
         {
             string path = $"{Resources.GetbalancesPath}?apikey={api_key}&market={market}";
             return (BalanceResponse)GetResponse(path, typeof(BalanceResponse));
+        }
+
+        public static CurrencyAddressResponse GetCurrencyAddress(string api_key, string market)
+        {
+            string path = $"{Resources.GetdepositaddressPath}?apikey={api_key}&market={market}";
+            return (CurrencyAddressResponse)GetResponse(path, typeof(CurrencyAddressResponse));
+        }
+
+        public static WithdrawResponse Withdraw(string api_key, string currency, double quantity, string address)
+        {
+            string path = $"{Resources.GetdepositaddressPath}?apikey={api_key}&currency={currency}&quantity={quantity}&address={address}";
+            return (WithdrawResponse)GetResponse(path, typeof(WithdrawResponse));
+        }
+
+        public static OrderResponse GetOrder(string api_key, string uuid)
+        {
+            string path = $"{Resources.GetorderPath}?apikey={api_key}&uuid={uuid}";
+            return (OrderResponse)GetResponse(path, typeof(OrderResponse));
         }
 
         #endregion
