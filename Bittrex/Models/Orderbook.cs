@@ -25,6 +25,6 @@ namespace Bittrex.Models
             result = new OrederbooksResult();
         }
 
-        public OrederbooksResult result;
+        public OrederbooksResult result { get; set; }
     }
 }

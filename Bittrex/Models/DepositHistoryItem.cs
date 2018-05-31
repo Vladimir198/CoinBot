@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bittrex.Models
 {
-    public class Withdraw
-    {
-        public string uuid { get; set; }
-    }
-
-    public class WithdrawHistoryItem
+    public class DepositHistoryItem
     {
         public string PaymentUuid { get; set; }
         public string Currency { get; set; }
@@ -26,22 +21,12 @@ namespace Bittrex.Models
         public bool InvalidAddress { get; set; }
     }
 
-    public class WithdrawResponse: Response
+    public class DepositHistoryResponce
     {
-        public WithdrawResponse()
+        public DepositHistoryResponce()
         {
-            result = new Withdraw();
+            result = new List<DepositHistoryItem>();
         }
-
-        public Withdraw result { get; set; }
-    }
-
-    public class WithdrawHistoryResponce
-    {
-        public WithdrawHistoryResponce()
-        {
-            result = new List<WithdrawHistoryItem>();
-        }
-        public List<WithdrawHistoryItem> result;
+        public List<DepositHistoryItem> result { get; set; }
     }
 }

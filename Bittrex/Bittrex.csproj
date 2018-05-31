@@ -50,6 +50,7 @@
     <Compile Include="Models\BuySelResponse.cs" />
     <Compile Include="Models\CancelResponse.cs" />
     <Compile Include="Models\CurrencyAddress.cs" />
+    <Compile Include="Models\DepositHistoryItem.cs" />
     <Compile Include="Models\EnumTypeOrders.cs" />
     <Compile Include="Models\CoinCurrency.cs" />
     <Compile Include="Models\OpenOrder.cs" />

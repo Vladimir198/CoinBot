@@ -12,6 +12,6 @@ namespace Bittrex.Models
         {
             result = "";
         }
-        string result;
+        public string result { get; set; }
     }
 }

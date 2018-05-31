@@ -161,6 +161,24 @@ namespace Bittrex
             return (OrderResponse)GetResponse(path, typeof(OrderResponse));
         }
 
+        public static OrderHistoryResponse GetOrderHistory(string api_key)
+        {
+            string path = $"{Resources.GetorderhistoryPath}&api_key={api_key}";
+            return (OrderHistoryResponse)GetResponse(path, typeof(OrderHistoryResponse));
+        }
+
+        public static WithdrawHistoryResponce GetWithdrawHistory(string api_key)
+        {
+            string path = $"{Resources.GetwithdrawalhistoryPath}&api_key={api_key}";
+            return (WithdrawHistoryResponce)GetResponse(path, typeof(WithdrawHistoryResponce));
+        }
+
+        public static DepositHistoryResponce GetDepositHistory(string api_key, string currency)
+        {
+            string path = $"{Resources.GetdeposithistoryPath}&api_key={api_key}&currency{currency}";
+            return (DepositHistoryResponce)GetResponse(path, typeof(DepositHistoryResponce));
+        }
+
         #endregion
     }
 }

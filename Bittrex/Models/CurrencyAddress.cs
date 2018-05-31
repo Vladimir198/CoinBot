@@ -19,6 +19,6 @@ namespace Bittrex.Models
             result = new CurrencyAddress();
         }
 
-        CurrencyAddress result;
+        public CurrencyAddress result { get; set; }
     }
 }
